@@ -22,10 +22,13 @@ Top 5 teams in the High School Division
 
 Come join us for fresh daily CTF challenges! We are aimed at beginners, but all levels are welcome!
 Since you are already on discord, no sign up is required! Or if you want, you can solve on our website. Everyone is welcome and our mods are always willing to help if you get stuck!
+
 https://gph.is/g/4gqQDY5
 
 https://imaginaryctf.org/
 
 https://discord.gg/bb4r5DgGnC
 
-Special thanks to our Digital Ocean for sponsoring us with $2000 in prizes, you can sign up for a free $100 free trial using this link https://try.digitalocean.com/developer-cloud
+Special thanks to our Digital Ocean for sponsoring us with $2000 in prizes, you can sign up for a free $100 free trial using this link
+
+https://try.digitalocean.com/developer-cloud

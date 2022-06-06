@@ -1,0 +1,74 @@
+  2           0 LOAD_NAME                0 (open)
+              2 LOAD_CONST               0 ('flag.txt')
+              4 CALL_FUNCTION            1
+              6 LOAD_METHOD              1 (read)
+              8 CALL_METHOD              0
+             10 STORE_NAME               2 (flag)
+
+  3          12 LOAD_NAME                0 (open)
+             14 LOAD_CONST               1 ('results.txt')
+             16 LOAD_CONST               2 ('w')
+             18 CALL_FUNCTION            2
+             20 STORE_NAME               3 (f)
+
+  4          22 LOAD_NAME                4 (range)
+             24 LOAD_NAME                5 (len)
+             26 LOAD_NAME                2 (flag)
+             28 CALL_FUNCTION            1
+             30 CALL_FUNCTION            1
+             32 GET_ITER
+        >>   34 FOR_ITER                96 (to 132)
+             36 STORE_NAME               6 (i)
+
+  5          38 LOAD_NAME                7 (input)
+             40 LOAD_CONST               3 ('Enter the flag: \n')
+             42 CALL_FUNCTION            1
+             44 STORE_NAME               8 (x)
+
+  6          46 LOAD_NAME                3 (f)
+             48 LOAD_METHOD              9 (write)
+             50 LOAD_NAME               10 (str)
+             52 LOAD_CONST               4 (5)
+             54 LOAD_NAME               11 (ord)
+             56 LOAD_NAME                2 (flag)
+             58 LOAD_NAME                6 (i)
+             60 BINARY_SUBSCR
+             62 CALL_FUNCTION            1
+             64 BINARY_POWER
+             66 LOAD_NAME               12 (int)
+             68 LOAD_NAME                8 (x)
+             70 CALL_FUNCTION            1
+             72 BINARY_SUBTRACT
+             74 CALL_FUNCTION            1
+             76 LOAD_CONST               5 ('\n')
+             78 BINARY_ADD
+             80 CALL_METHOD              1
+             82 POP_TOP
+
+  7          84 LOAD_CONST               4 (5)
+             86 LOAD_NAME               11 (ord)
+             88 LOAD_NAME                2 (flag)
+             90 LOAD_NAME                6 (i)
+             92 BINARY_SUBSCR
+             94 CALL_FUNCTION            1
+             96 BINARY_POWER
+             98 LOAD_NAME               12 (int)
+            100 LOAD_NAME                8 (x)
+            102 CALL_FUNCTION            1
+            104 BINARY_SUBTRACT
+            106 LOAD_CONST               6 (0)
+            108 COMPARE_OP               2 (==)
+            110 POP_JUMP_IF_FALSE       34
+
+  8         112 LOAD_NAME               13 (print)
+            114 LOAD_CONST               7 ('Correct letter ')
+            116 LOAD_NAME                2 (flag)
+            118 LOAD_NAME                6 (i)
+            120 BINARY_SUBSCR
+            122 FORMAT_VALUE             0
+            124 BUILD_STRING             2
+            126 CALL_FUNCTION            1
+            128 POP_TOP
+            130 JUMP_ABSOLUTE           34
+        >>  132 LOAD_CONST               8 (None)
+            134 RETURN_VALUE

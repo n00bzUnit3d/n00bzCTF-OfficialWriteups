@@ -1,0 +1,4 @@
+name: dekatron
+category: pwn
+port: 4402
+externalPort: 32257

@@ -1,0 +1,4 @@
+name: basics1
+category: pwn
+port: 1337 
+externalPort: 32190

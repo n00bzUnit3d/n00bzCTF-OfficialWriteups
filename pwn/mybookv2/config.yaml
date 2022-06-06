@@ -1,0 +1,4 @@
+name: mybookv2
+category: pwn
+port: 4442
+externalPort: 32135

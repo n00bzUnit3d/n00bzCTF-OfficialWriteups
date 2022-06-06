@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  challenge:
+    container_name: nosqlforyou
+    image: nosqlforyou
+    restart: always
+    build: .
+    ports:
+      - "42067:42067"
+    links:
+      - mongo_local
+  
+  mongo_local:
+    container_name: mongo_local
+    image: mongo_local
+    restart: always
+    build: data/
+    ports:
+      - "27017:27017"
+    logging:
+      driver: "none"

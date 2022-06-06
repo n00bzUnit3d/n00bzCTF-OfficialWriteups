@@ -1,0 +1,4 @@
+name: nosqlforyou
+category: web
+port: 42067
+externalPort: 32565

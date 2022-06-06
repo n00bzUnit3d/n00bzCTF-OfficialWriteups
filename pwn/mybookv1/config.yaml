@@ -1,0 +1,4 @@
+name: mybookv1
+category: pwn
+port: 4441
+externalPort: 31772

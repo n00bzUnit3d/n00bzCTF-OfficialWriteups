@@ -1,0 +1,15 @@
+{
+  "name": "challenge_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "challenge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GamingChair",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.0",
+    "mongoose": "^6.3.1"
+  }
+}

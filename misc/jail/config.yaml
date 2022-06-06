@@ -1,0 +1,4 @@
+name: jail
+category: misc
+port: 1337 
+externalPort: 32281

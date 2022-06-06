@@ -1,0 +1,4 @@
+name: riaas
+category: web
+port: 8000
+externalPort: 31517

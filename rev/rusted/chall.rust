@@ -1,0 +1,35 @@
+use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
+fn calculate_hash<T: Hash>(t: &T) -> u64 {
+    let mut s = DefaultHasher::new();
+    t.hash(&mut s);
+    s.finish()
+}
+fn main() {
+    use std::io;
+    #[derive(Hash)]
+    struct Hashing {
+    string_to_hash: String,
+};
+    println!("Enter the flag:");
+    let mut guess = String::new();
+    let mut flag = String::new();
+    io::stdin().read_line(&mut guess).unwrap();
+    let _to_hash = Hashing {
+        string_to_hash:guess.to_string()
+    };
+    let flag = "REDACTED";
+    //for (_x,c) in flag.chars().enumerate() {
+    //println!("letter of flag {}\n", calculate_hash(&c));
+         //}
+    for (_x,c) in guess.chars().enumerate() {     
+    println!("letter of guess {}\n", calculate_hash(&c))
+}
+    let _hashed_flag = Hashing {
+         string_to_hash:flag.to_string()
+    };
+    print!("{}\n",calculate_hash(&flag));
+    print!("{}\n", calculate_hash(&guess));
+    }
+
+    

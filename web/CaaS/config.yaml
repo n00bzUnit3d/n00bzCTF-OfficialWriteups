@@ -1,0 +1,4 @@
+name: caas
+category: web
+port: 8000
+externalPort: 30533

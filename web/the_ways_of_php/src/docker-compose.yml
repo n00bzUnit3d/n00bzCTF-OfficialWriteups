@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  challenge:
+    container_name: the_ways_of_php
+    image: the_ways_of_php
+    restart: always
+    build: .
+    ports:
+      - "42068:8080"

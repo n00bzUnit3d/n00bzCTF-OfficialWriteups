@@ -1,0 +1,4 @@
+name: rusted
+category: rev
+port: 1337 # enter correct port here (internal port)
+externalPort: 3000 # (port for outside)

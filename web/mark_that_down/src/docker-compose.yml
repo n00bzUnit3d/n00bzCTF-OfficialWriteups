@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  challenge:
+    container_name: mark_that_down
+    image: mark_that_down
+    restart: always
+    build: .
+    ports:
+      - "42069:42069"

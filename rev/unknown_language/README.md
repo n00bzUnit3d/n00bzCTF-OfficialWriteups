@@ -1,0 +1,145 @@
+# Unknown Language | NoobMaster
+
+- Description: This is an unknown language, can you find the flag?
+- Hint: Some would say it should be rev/crypto
+
+attachments:/attachments/Unknown_Language/attachments.zip
+
+# Write up
+
+This is python byte-code, so lets understand the code bit by bit -
+
+```
+2 0 LOAD_NAME 0 (open)
+2 LOAD_CONST 0 ('flag.txt')
+4 CALL_FUNCTION 1
+6 LOAD_METHOD 1 (read)
+8 CALL_METHOD 0
+10 STORE_NAME 2 (flag)
+
+3 12 LOAD_NAME 0 (open)
+14 LOAD_CONST 1 ('results.txt')
+16 LOAD_CONST 2 ('w')
+18 CALL_FUNCTION 2
+20 STORE_NAME 3 (f)
+```
+
+This part is easy, it is simply -
+
+```py
+flag = open('flag.txt').read()
+f = open('results.txt','w')
+```
+
+Second Part -
+
+```4 22 LOAD_NAME                4 (range)
+             24 LOAD_NAME                5 (len)
+             26 LOAD_NAME                2 (flag)
+             28 CALL_FUNCTION            1
+             30 CALL_FUNCTION            1
+             32 GET_ITER
+        >>   34 FOR_ITER                96 (to 132)
+             36 STORE_NAME               6 (i)
+
+  5          38 LOAD_NAME                7 (input)
+             40 LOAD_CONST               3 ('Enter the flag: \n')
+             42 CALL_FUNCTION            1
+             44 STORE_NAME               8 (x)
+```
+
+This is also not that hard, it is -
+
+```py
+for i in range(len(flag))
+	x = input('Enter the flag: \n')
+```
+
+Third Part:
+
+```6 46 LOAD_NAME                3 (f)
+             48 LOAD_METHOD              9 (write)
+             50 LOAD_NAME               10 (str)
+             52 LOAD_CONST               4 (5)
+             54 LOAD_NAME               11 (ord)
+             56 LOAD_NAME                2 (flag)
+             58 LOAD_NAME                6 (i)
+             60 BINARY_SUBSCR
+             62 CALL_FUNCTION            1
+             64 BINARY_POWER
+             66 LOAD_NAME               12 (int)
+             68 LOAD_NAME                8 (x)
+             70 CALL_FUNCTION            1
+             72 BINARY_SUBTRACT
+             74 CALL_FUNCTION            1
+             76 LOAD_CONST               5 ('\n')
+             78 BINARY_ADD
+             80 CALL_METHOD              1
+             82 POP_TOP
+```
+
+So you are given how to compile a python code so you can play around with it, As you can see we have `64 BINARY_POWER` which stands for power but we are not sure what is it powering?
+
+```py
+ord(flag[i])**5
+or
+5**ord(flag[i])
+```
+
+so how do we figure this out? we make a dummy flag and try both the cases
+
+```py
+flag = 'random'
+ord(flag[i]**5)
+```
+
+And then compile it as given in compile.py then do vice-versa.
+
+You will figure out it's `5**ord(flag[i])`, Now the rest is again easy -
+
+```102 CALL_FUNCTION            1
+            104 BINARY_SUBTRACT
+            106 LOAD_CONST               6 (0)
+            108 COMPARE_OP               2 (==)
+            110 POP_JUMP_IF_FALSE       34
+
+  8         112 LOAD_NAME               13 (print)
+            114 LOAD_CONST               7 ('Correct letter ')
+            116 LOAD_NAME                2 (flag)
+            118 LOAD_NAME                6 (i)
+            120 BINARY_SUBSCR
+            122 FORMAT_VALUE             0
+            124 BUILD_STRING             2
+            126 CALL_FUNCTION            1
+            128 POP_TOP
+            130 JUMP_ABSOLUTE           34
+        >>  132 LOAD_CONST               8 (None)
+            134 RETURN_VALUE
+```
+
+so if `5**ord(flag[i]) == 0 print(f'Correct letter {flag[i]}')` And its also writing the above data(the power) to results.txt
+
+Rev part over, crypto started
+
+How do we find out the numbers then? We use logarithm, How? Take a look -
+
+```py
+import math
+# If we have we to find for 2**3, we do
+print(2**3) # 8
+print(math.log(8,2)) # 3
+```
+
+So like this we can find the numbers and then chr() it to get the flag, Solve Script -
+
+```py
+import math
+flag = ''
+x = [77037197775489434122239117703397092741524065928615527809597551822662353515620,3552713678800500929355621337890620,3552713678800500929355621337890620,315544362088404722164691426113114491869282574043609201908111572265620,18807909613156600127499784595555930845098648908353400344140027300454676151275634765620,94039548065783000637498922977779654225493244541767001720700136502273380756378173828120,48148248609680896326399448564623182963452541205384704880998469889163970947265620,39443045261050590270586428264139311483660321755451150238513946533203120,30092655381050560203999655352889489352157838253365440550624043680727481842041015620,444089209850062616169452667236328120,240741243048404481631997242823115914817262706026923524404992349445819854736328120,17763568394002504646778106689453120,77037197775489434122239117703397092741524065928615527809597551822662353515620,986076131526264756764660706603482787091508043886278755962848663330078120,2524354896707237777317531408904915934954260592348873615264892578120,150463276905252801019998276764447446760789191266827202753120218403637409210205078120,17763568394002504646778106689453120,1203706215242022408159986214115579574086313530134617622024961747229099273681640620,4930380657631323783823303533017413935457540219431393779814243316650390620,2524354896707237777317531408904915934954260592348873615264892578120,3081487911019577364889564708135883709660962637144621112383902072906494140620,3552713678800500929355621337890620,986076131526264756764660706603482787091508043886278755962848663330078120,63108872417680944432938285222622898373856514808721840381622314453120,48148248609680896326399448564623182963452541205384704880998469889163970947265620,17763568394002504646778106689453120,1203706215242022408159986214115579574086313530134617622024961747229099273681640620,4930380657631323783823303533017413935457540219431393779814243316650390620,15407439555097886824447823540679418548304813185723105561919510364532470703120,240741243048404481631997242823115914817262706026923524404992349445819854736328120,2524354896707237777317531408904915934954260592348873615264892578120,150463276905252801019998276764447446760789191266827202753120218403637409210205078120,4930380657631323783823303533017413935457540219431393779814243316650390620,2220446049250313080847263336181640620,1203706215242022408159986214115579574086313530134617622024961747229099273681640620,108420217248550443400745280086994171142578120,2350988701644575015937473074444491355637331113544175043017503412556834518909454345703120] # as the results.txt is generated everytime you run it, you need to define it by hand like I did
+
+for i in range(len(x)):
+	flag += chr(int(math.log(int(x[i]),5)))
+print(flag) # n00bz{rev3s1ng_w1th_l0gar1thms_wh4t?}
+```
+
+# Flag - n00bz{rev3s1ng_w1th_l0gar1thms_wh4t?}

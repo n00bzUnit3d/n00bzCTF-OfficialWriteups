@@ -1,0 +1,17 @@
+{
+  "name": "challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GamingChair",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-rate-limit": "^6.4.0",
+    "puppeteer": "^14.1.0",
+    "showdown": "^2.1.0"
+  }
+}

